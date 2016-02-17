@@ -2,23 +2,25 @@ package com.example.danielmacario.amp_ecse_428;
 
 public class Envelope {
 
-    public enum Destination {
-        USA,
-        CANADA,
-        INTERNATIONAL
-    }
-
     private double width;
     private double length;
     private double weight;
     private boolean standard;
-    private Destination dest;
 
-    public Envelope(double length, double width, double weight, Destination dest) {
+    public Envelope(double length, double width, double weight) throws MyInputException {
+        if (length < 140.0 || length > 380.0) {
+            throw new MyInputException("Invalid length value");
+        }
+        if (width < 90 || width > 270) {
+            throw new MyInputException("Invalid width value");
+        }
+        if (weight < 2 || weight > 500) {
+            throw new MyInputException("Invalid weight value");
+        }
+
         this.width = width;
         this.length = length;
         this.weight = weight;
-        this.dest = dest;
         this.checkIsStandard();
     }
 
