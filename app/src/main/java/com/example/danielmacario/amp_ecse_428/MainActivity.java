@@ -21,19 +21,37 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        submitButton = (Button) findViewById(R.id.button);
-        weightField = (EditText) findViewById(R.id.editText2);
-        lengthField = (EditText) findViewById(R.id.editText);
-        widthField = (EditText) findViewById(R.id.editText4);
-        postalRateView = (TextView) findViewById(R.id.textView6);
+        submitButton = (Button) findViewById(R.id.submitButton);
+        weightField = (EditText) findViewById(R.id.weight);
+        lengthField = (EditText) findViewById(R.id.length);
+        widthField = (EditText) findViewById(R.id.width);
+        postalRateView = (TextView) findViewById(R.id.output);
 
         submitButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        double length = Double.parseDouble(lengthField.getText().toString());
-                        double width = Double.parseDouble(widthField.getText().toString());
-                        double weight = Double.parseDouble(weightField.getText().toString());
+                        if (weightField.getText().toString().length() == 0) {
+                            postalRateView.setText("Invalid Input");
+                            return;
+                        }
+                        if (lengthField.getText().toString().length() == 0) {
+                            postalRateView.setText("Invalid Input");
+                            return;
+                        }
+                        if (widthField.getText().toString().length() == 0) {
+                            postalRateView.setText("Invalid Input");
+                            return;
+                        }
+                        double length, width, weight;
+                        try {
+                            length = Double.parseDouble(lengthField.getText().toString());
+                            width = Double.parseDouble(widthField.getText().toString());
+                            weight = Double.parseDouble(weightField.getText().toString());
+                        } catch (NumberFormatException e) {
+                            postalRateView.setText("Only numerical input is allowed");
+                            return;
+                        }
 
                         try {
                             Envelope envelope = new Envelope(length, width, weight);

@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText4"
+        android:id="@+id/width"
         android:width="100dp"
         android:layout_alignBottom="@+id/textView4"
         android:layout_toRightOf="@+id/textView3"
@@ -27,7 +27,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Weight (g)"
         android:id="@+id/textView2"
-        android:layout_above="@+id/editText"
+        android:layout_above="@+id/length"
         android:layout_alignRight="@+id/textView"
         android:layout_alignEnd="@+id/textView" />
 
@@ -37,7 +37,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Length (mm)"
         android:id="@+id/textView3"
-        android:layout_above="@+id/editText4"
+        android:layout_above="@+id/width"
         android:layout_alignLeft="@+id/textView4"
         android:layout_alignStart="@+id/textView4" />
 
@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Postal Rate:"
-        android:id="@+id/textView6"
+        android:id="@+id/output"
         android:width="300dp"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/textView"
@@ -67,30 +67,30 @@
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/length"
         android:width="100dp"
-        android:layout_above="@+id/editText4"
-        android:layout_alignLeft="@+id/editText4"
-        android:layout_alignStart="@+id/editText4" />
+        android:layout_above="@+id/width"
+        android:layout_alignLeft="@+id/width"
+        android:layout_alignStart="@+id/width" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editText2"
+        android:id="@+id/weight"
         android:width="100dp"
         android:layout_alignBottom="@+id/textView2"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText" />
+        android:layout_alignLeft="@+id/length"
+        android:layout_alignStart="@+id/length" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit"
-        android:id="@+id/button"
+        android:id="@+id/submitButton"
         android:layout_gravity="right"
         android:layout_marginTop="52dp"
-        android:layout_below="@+id/editText4"
+        android:layout_below="@+id/width"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
